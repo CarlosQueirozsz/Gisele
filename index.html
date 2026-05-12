@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para a Gisele ❤️</title>
+    <style>
+        body {
+            background-color: #ffebee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        #card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        h1 { color: #d32f2f; }
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #btnSim {
+            background-color: #ff4081;
+            color: white;
+        }
+        #btnNao {
+            background-color: #cfd8dc;
+            color: #546e7a;
+            position: absolute;
+            left: 220px;
+        }
+        .gif {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="card">
+        <img class="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHIyc2V3M2JtYm14bmR4ZzR6ZzR6ZzR6ZzR6ZzR6ZzR6ZzR6ZzR6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/T86i6yDyKQzONWcVHq/giphy.gif" alt="Coração">
+        <h1 id="titulo">Gislee, você aceita namorar comigo?</h1>
+        <div class="buttons">
+            <button id="btnSim" onclick="aceitou()">SIM!</button>
+            <button id="btnNao" onmouseover="foge()">Não</button>
+        </div>
+    </div>
+
+    <script>
+        function foge() {
+            const btnNao = document.getElementById('btnNao');
+            const larguraJanela = window.innerWidth - 100;
+            const alturaJanela = window.innerHeight - 100;
+            
+            const novaX = Math.random() * larguraJanela;
+            const novaY = Math.random() * alturaJanela;
+            
+            btnNao.style.position = 'fixed';
+            btnNao.style.left = novaX + 'px';
+            btnNao.style.top = novaY + 'px';
+        }
+
+        function aceitou() {
+            document.getElementById('card').innerHTML = `
+                <img class="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZ0bmZ0bmZ0bmZ0bmZ0bmZ0bmZ0bmZ0bmZ0bmZ0bmZ0bmZ0JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/v4674pBK8Y5A3sV3hX/giphy.gif">
+                <h1>Uhuul! ❤️</h1>
+                <p>Você me faz o dev mais feliz do mundo, Gislee!</p>
+            `;
+        }
+    </script>
+</body>
+</html>
